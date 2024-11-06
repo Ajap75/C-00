@@ -6,7 +6,7 @@
 /*   By: anastruc <anastruc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 18:35:45 by anastruc          #+#    #+#             */
-/*   Updated: 2024/11/05 17:50:03 by anastruc         ###   ########.fr       */
+/*   Updated: 2024/11/06 16:31:24 by anastruc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,23 +21,23 @@ int	main ()
 	std::string input;
 	PhoneBook my_phonebook;
 
-	std::cout << "Welcome to your Phonebook" << std::endl;
+	std::cout << "\033[33m" << "WELCOME TO YOUR PHONEBOOK" << "\033[0m" << std::endl;
 	std::cout << "Choose a command = ADD, SEARCH or EXIT" << std::endl;
 	while (1)
 	{
-		std::cin >> input;
+		std::getline(std::cin, input);
 		if (input.compare("ADD") == 0)
 		{
 			my_phonebook.addcontact();
-			input.erase();
 			//enregistrer un nouveau contact
 			//Si l’utilisateur entre cette commande, le programme lui demande de remplir
 			// une par une les informations du nouveau contact. Une fois tous les champs
 			// complétés, le nouveau contact est ajouté au répertoir
 			// Les champs d’un contact enregistré nE peuvent être vides.
 		}
-// 		else if (input.compare("SEARCH") == 0)
-// 		{
+		else if (input.compare("SEARCH") == 0)
+ 		{
+			my_phonebook.search();
 // 			// Affiche les contacts enregistrés sous la forme d’une liste de 4 colonnes : index,
 // 			//first name, last name et nickname.
 // ◦ 			//Chaque colonne doit faire 10 caractères de long. Elles doivent être séparées
@@ -47,7 +47,11 @@ int	main ()
 // 			//Ensuite, le programme demande à l’utilisateur d’entrer l’index du contact à af-
 // 			//ficher. Si l’index ou son format sont incorrects, gérez cela de manière pertinente.
 // 			//Sinon, affichez les informations du contact, une par ligne.
-// 		}
+ 		}
+		else if (input.compare("EXIT") == 0)
+		{
+			return (0);
+		}
 // 		else if (input.compare("EXIT") == 0)
 // 		{
 // 			//DELET LES CONTACT ET EXIT

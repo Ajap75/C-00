@@ -6,7 +6,7 @@
 /*   By: anastruc <anastruc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 18:27:35 by anastruc          #+#    #+#             */
-/*   Updated: 2024/11/05 16:20:27 by anastruc         ###   ########.fr       */
+/*   Updated: 2024/11/06 16:55:56 by anastruc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,38 +18,72 @@
 
 class Contact
 {
-	public:
-		Contact() : m_phone_number(0) {}
-
-	void set_phonenumber(const int phone_number)
-	{
-		Contact::m_phone_number = phone_number;
-	}
-	void set_firstname(const std::string& first_name)
-	{
-		Contact::m_first_name = first_name;
-	}
-	void set_lastname(const std::string& last_name)
-	{
-		Contact::m_last_name = last_name;
-	}
-	void set_nickname(const std::string& nick_name)
-	{
-		Contact::m_nick_name = nick_name;
-	}
-	void set_darkestsecret(const std::string& darkest_secret)
-	{
-		Contact::m_darkest_secret = darkest_secret;
-	}
-
 	private:
 
-	int	index ;
+	int	m_index ;
 	std::string m_first_name;
 	std::string m_last_name;
 	std::string m_nick_name;
-	int m_phone_number;
+	std::string m_phone_number;
 	std::string m_darkest_secret;
+
+	public:
+		Contact() {}
+		// : m_index(0), m_first_name("AA"), m_last_name(""),  m_nick_name(""), m_phone_number(""), m_darkest_secret("") {}
+
+	void set_index(const int index)
+	{
+		Contact::m_index = index;
+	}
+	void set_phonenumber(const std::string phone_number)
+	{
+		Contact::m_phone_number = phone_number;
+	}
+	void set_firstname(const std::string first_name)
+	{
+		Contact::m_first_name = first_name;
+		printf("SET FIRST NAME = %s\n", m_first_name.c_str());
+	}
+	void set_lastname(const std::string last_name)
+	{
+		Contact::m_last_name = last_name;
+	}
+	void set_nickname(const std::string nick_name)
+	{
+		Contact::m_nick_name = nick_name;
+	}
+	void set_darkestsecret(const std::string darkest_secret)
+	{
+		Contact::m_darkest_secret = darkest_secret;
+	}
+	const std::string get_firstname()
+	{
+		return(this->m_first_name);
+	}
+	const std::string get_last_name()
+	{
+		return (this->m_last_name);
+	}
+	const std::string get_nick_name()
+	{
+		return(this->m_nick_name);
+	}
+
+	const std::string get_darkest_secret()
+	{
+		return(this->m_darkest_secret);
+	}
+
+	const std::string get_number()
+	{
+		return (this->m_phone_number);
+	}
+
+	int get_index()
+	{
+		return (this->m_index);
+	}
+
 
 } ;
 

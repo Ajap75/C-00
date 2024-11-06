@@ -1,0 +1,51 @@
+ADD
+John
+Doe
+Johnny
+123456789
+Loves coffee
+ADD
+Jane
+Smith
+Janie
+987654321
+Afraid of heights
+ADD
+Michael
+Johnson
+Mike
+555123456
+Secret gamer
+ADD
+Emily
+Brown
+Em
+444987654
+Collects stamps
+ADD
+Chrissssssssssssddddfffff
+Wilson
+CW
+333555777
+Plays guitar
+ADD
+Sarah
+Taylor
+Sari
+222333444
+Has a twin
+ADD
+David
+Anderson
+Dave
+777888999
+Never seen Star Wars
+ADD
+Laura
+Thomas
+Laurie
+111222333
+Fan of mystery novels
+SEARCH
+2
+EXIT
