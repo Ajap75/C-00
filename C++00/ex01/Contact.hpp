@@ -6,7 +6,7 @@
 /*   By: anastruc <anastruc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 18:27:35 by anastruc          #+#    #+#             */
-/*   Updated: 2024/11/06 16:55:56 by anastruc         ###   ########.fr       */
+/*   Updated: 2024/11/07 10:52:22 by anastruc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class Contact
 
 	public:
 		Contact() {}
-		// : m_index(0), m_first_name("AA"), m_last_name(""),  m_nick_name(""), m_phone_number(""), m_darkest_secret("") {}
+		~Contact () {}
 
 	void set_index(const int index)
 	{

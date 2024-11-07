@@ -6,47 +6,62 @@
 /*   By: anastruc <anastruc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 18:24:09 by anastruc          #+#    #+#             */
-/*   Updated: 2024/11/06 17:12:09 by anastruc         ###   ########.fr       */
+/*   Updated: 2024/11/07 11:05:56 by anastruc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string>
 #include "Contact.hpp"
-#include <string>
 #include <cctype>
-#include <iostream>
-#include <iomanip>
 #include <cstdlib>
+#include <iomanip>
+#include <iostream>
+#include <string>
 
 #ifndef PHONE_BOOK_HPP
 # define PHONE_BOOK_HPP
 
+void	ask_user_input(std::string& param)
+{
+		std::cout << "Enter the " << param << std::endl;
+		std::getline(std::cin, param);
+		if (param.empty())
+			std::cout << "\033[31m"
+						<< "Empty Input"
+						<< "\033[0m" << std::endl;
+}
 
+bool	isNumber(std::string search_index)
+{
+	unsigned long i;
+	i = 0;
 
+	while (i < search_index.size() - 1)
+	{
+		if (!std::isdigit(search_index[i]))
+			return (0);
+	}
+	return (1);
+}
 void	print_contact_info(int nbrcontacts, Contact *contacts, int search_index)
 {
-	int i;
+	int	i;
+
 	i = 0;
-	printf("Nbr contact = %d\n", nbrcontacts);
-	if (search_index < 0 || search_index > (nbrcontacts - 1))
+	while (i < nbrcontacts)
 	{
-		std::cout << "Incorrect Index" << std::endl;
-	}
-	while (i < nbrcontacts -1)
-	{
-		if(contacts[i].get_index() == search_index)
-			{
+		if (contacts[i].get_index() == search_index)
+		{
 			std::cout << contacts[i].get_index() << std::endl;
 			std::cout << contacts[i].get_firstname() << std::endl;
 			std::cout << contacts[i].get_last_name() << std::endl;
 			std::cout << contacts[i].get_nick_name() << std::endl;
 			std::cout << contacts[i].get_darkest_secret() << std::endl;
 			std::cout << contacts[i].get_number() << std::endl;
-			}
+		}
 		i++;
 	}
 }
-std::string	truncate(std::string text)
+std::string truncate(std::string text)
 {
 	if (text.size() > 10)
 		return (text.substr(0, 9) + ".");
@@ -55,7 +70,8 @@ std::string	truncate(std::string text)
 }
 void	print_contact(Contact &new_contact)
 {
-	int index;
+	int	index;
+
 	std::string first_name;
 	std::string last_name;
 	std::string nick_name;
@@ -63,26 +79,22 @@ void	print_contact(Contact &new_contact)
 	first_name = new_contact.get_firstname();
 	last_name = new_contact.get_last_name();
 	nick_name = new_contact.get_nick_name();
-
 	// printf("FIRST NAME = %s\n", first_name.c_str());
-
 	std::cout << std::setw(10) << std::right << index << "|";
 	std::cout << std::setw(10) << std::right << truncate(first_name.c_str()) << "|";
 	std::cout << std::setw(10) << std::right << truncate(last_name) << "|";
 	std::cout << std::setw(10) << std::right << truncate(nick_name) << std::endl;
-
-
 	return ;
 }
 void	print_phonebook(int nbrcontacts, Contact *contacts)
 {
-	int i ;
+	int	i;
+
 	if (contacts == nullptr || nbrcontacts <= 0)
 	{
 		std::cout << "No contact." << std::endl;
-		return;
+		return ;
 	}
-
 	i = 0;
 	while (i < nbrcontacts)
 	{
@@ -92,23 +104,21 @@ void	print_phonebook(int nbrcontacts, Contact *contacts)
 	return ;
 }
 
-
 class PhoneBook
 {
-	private :
-		Contact contacts[8];
-		int	nbrcontacts;
-		int	index ;
+  private:
+	Contact contacts[8];
+	int nbrcontacts;
+	int index;
 
-
-	public :
-
-	PhoneBook ()  : nbrcontacts (0), index(0){}
+  public:
+	PhoneBook() : nbrcontacts(0), index(0) {}
+	~PhoneBook() {}
 
 	void addcontact()
 	{
-		Contact new_contact ;
-		std::string	contact_number;
+		Contact new_contact;
+		std::string contact_number;
 		std::string first_name;
 		std::string last_name;
 		std::string nick_name;
@@ -119,71 +129,59 @@ class PhoneBook
 			nbrcontacts += 1;
 		}
 		index = index % 8;
-		printf("INDEX =%d\n", index);
-		printf("NBR CONTACT = %d\n", nbrcontacts);
+		// Enable the circularity. When nbrcontacts reaches 8,
+		//  the index go back to 0, doing so we erase the oldest contact
 		new_contact.set_index(index);
 
-		std::cout << "Enter the first_name" << std::endl;
-		std::getline(std::cin , first_name);
-		if (first_name.empty())
-			std::cout << "\033[31m" <<"Empty Input" << "\033[0m" << std::endl;
-		printf("JE PASS LAfirst_name = %s\n", first_name.c_str());
+		ask_user_input(first_name);
 		new_contact.set_firstname(first_name.c_str());
-
-		std::cout << "Enter the last_name" << std::endl;
-		std::getline(std::cin , last_name);
-		if (last_name.empty())
-			std::cout << "\033[31m" <<"Empty Input" << "\033[0m" << std::endl;
+		ask_user_input(last_name);
 		new_contact.set_lastname(last_name);
-
-		std::cout << "Enter the nick_name" << std::endl;
-		std::getline(std::cin ,nick_name);
-		if (nick_name.empty())
-			std::cout << "\033[31m" <<"Empty Input" << "\033[0m" << std::endl;
+		ask_user_input(nick_name);
 		new_contact.set_nickname(nick_name);
-
-		std::cout << "Enter the number" << std::endl;
-		std::getline(std::cin, contact_number);
-		if (contact_number.empty())
-			std::cout << "\033[31m" <<"Empty Input" << "\033[0m" << std::endl;
+		ask_user_input(contact_number);
 		new_contact.set_phonenumber(contact_number);
-
-
-		std::cout << "Enter the darket_secret" << std::endl;
-		std::getline(std::cin , darkest_secret);
-		if (darkest_secret.empty())
-			std::cout << "\033[31m" <<"Empty Input" << "\033[0m" << std::endl;
+		ask_user_input(darkest_secret);
 		new_contact.set_darkestsecret(darkest_secret);
 
-
-			// Enable the circularity. When nbrcontacts reaches 8,
-			//  the index go back to 0, doing so we erase the oldest contact
-
-		std::cout << "\033[32m" << "Contact succefully added" << std::endl << "You have " << nbrcontacts << " contacts registered"<< "\033[0m" << std::endl;
+		std::cout << "\033[32m"
+					<< "Contact succefully added" << std::endl
+					<< "You have " << nbrcontacts << " contacts registered"
+					<< "\033[0m" << std::endl;
 		printf("FIRST NAME = %s\n", first_name.c_str());
 
 		contacts[index] = new_contact;
 		index++;
 	}
 
-	void search ()
+
+
+	void search()
 	{
 		std::string search_index;
+		int search_index_int;
 
 		print_phonebook(nbrcontacts, contacts);
-
-		while(1)
+		while (1)
 		{
 			std::getline(std::cin, search_index);
-		if (!search_index.empty())
-		{
-			print_contact_info(nbrcontacts, contacts, stoi(search_index));
+			if (search_index.empty() || !isNumber(search_index))
+			{
+				printf("TEST\n");
+				std::cout << "Incorrect Index" << std::endl;
+				return ;
+			}
+			search_index_int = stoi(search_index);
+			if (search_index_int < 0 || search_index_int > (nbrcontacts - 1))
+				std::cout << "Incorrect Index" << std::endl;
+			else
+				print_contact_info(nbrcontacts, contacts, stoi(search_index));
 			return ;
 		}
-		}
 	}
-
 };
+
+
 
 
 #endif

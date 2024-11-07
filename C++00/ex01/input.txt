@@ -48,4 +48,12 @@ Laurie
 Fan of mystery novels
 SEARCH
 2
+ADD
+XX
+XX
+XX
+XX
+XX
+SEARCH
+8
 EXIT
