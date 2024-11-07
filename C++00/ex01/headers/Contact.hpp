@@ -6,7 +6,7 @@
 /*   By: anastruc <anastruc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 18:27:35 by anastruc          #+#    #+#             */
-/*   Updated: 2024/11/07 12:51:30 by anastruc         ###   ########.fr       */
+/*   Updated: 2024/11/07 16:53:05 by anastruc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ class Contact
 	const std::string get_nick_name();
 	const std::string get_darkest_secret();
 	const std::string get_number();
-	const int get_index();
+	int get_index();
 };
 
 #endif

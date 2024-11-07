@@ -6,11 +6,11 @@
 /*   By: anastruc <anastruc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 12:20:45 by anastruc          #+#    #+#             */
-/*   Updated: 2024/11/07 12:51:16 by anastruc         ###   ########.fr       */
+/*   Updated: 2024/11/07 15:42:45 by anastruc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Contact.hpp"
+#include "../headers/Contact.hpp"
 #include <iostream>
 
 void Contact::set_index(const int index)
@@ -57,7 +57,7 @@ const std::string Contact::get_number()
 {
 	return (this->m_phone_number);
 }
-const int Contact::get_index()
+int Contact::get_index()
 {
 	return (this->m_index);
 }

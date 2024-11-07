@@ -6,11 +6,12 @@
 /*   By: anastruc <anastruc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 12:46:05 by anastruc          #+#    #+#             */
-/*   Updated: 2024/11/07 12:49:38 by anastruc         ###   ########.fr       */
+/*   Updated: 2024/11/07 17:40:46 by anastruc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
+#include "../headers/PhoneBook.hpp"
+#include "../headers/utils.hpp"
 #include <iomanip>
 #include <iostream>
 #include <string>
@@ -20,10 +21,8 @@ int	main(void)
 	PhoneBook my_phonebook;
 
 	std::string input;
-	std::cout << "\033[33m"
-				<< "WELCOME TO YOUR PHONEBOOK"
-				<< "\033[0m" << std::endl;
-	std::cout << "Choose a command = ADD, SEARCH or EXIT" << std::endl;
+	std::cout << YELLOW << "\n\n        WELCOME TO YOUR PHONEBOOK\n" << RESET << std::endl;
+	std::cout << YELLOW << "Choose a command : \n\n\nADD \n\nSEARCH \n\nEXIT\n\n" << RESET << std::endl;
 	while (1)
 	{
 		std::getline(std::cin, input);

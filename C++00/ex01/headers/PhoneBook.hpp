@@ -6,12 +6,14 @@
 /*   By: anastruc <anastruc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 18:24:09 by anastruc          #+#    #+#             */
-/*   Updated: 2024/11/07 12:52:38 by anastruc         ###   ########.fr       */
+/*   Updated: 2024/11/07 15:34:56 by anastruc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONE_BOOK_HPP
-# define PHONE_BOOK_HPP
+#ifndef PHONEBOOK_HPP
+# define PHONEBOOK_HPP
+
+#include "Contact.hpp"
 
 class PhoneBook
 {

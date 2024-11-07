@@ -6,13 +6,13 @@
 #    By: anastruc <anastruc@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/07 12:53:29 by anastruc          #+#    #+#              #
-#    Updated: 2024/11/07 13:32:21 by anastruc         ###   ########.fr        #
+#    Updated: 2024/11/07 16:09:55 by anastruc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = My_Awesome_PhoneBook
 COMPIL = c++
-FLAGs = -Wall -Werror -Wextra -std=c++98 -g3 -fPIC
+FLAGS = -Wall -Werror -Wextra -std=c++98 -g3 -fPIC
 
 PINK = \033[1;35m
 BLUE = \033[1;36m
@@ -22,7 +22,6 @@ HEADER = headers/Contact.hpp\
 			headers/PhoneBook.hpp
 SRCS = Contact.cpp \
 		PhoneBook.cpp \
-		Addcontact_utils.cpp \
 		Search_utils.cpp \
 		main.cpp \
 
@@ -34,9 +33,9 @@ all : $(NAME)
 
 objs/%.o: srcs/%.cpp $(HEADER)
 		@mkdir -p objs
-		@$(COMPIL) $(FLAGS) -cpp $< -o $@
+		@$(COMPIL) $(FLAGS) -c $< -o $@
 
-$(NAME) : $(OBJS) $(HEADER)
+$(NAME) : $(OBJS)
 		@$(COMPIL) $(FLAGS) -o $@ $(OBJS)
 		@echo "$(BLUE)\n  My_Awesome_PhoneBook COMPILED \n$(NC) "
 
