@@ -6,7 +6,7 @@
 #    By: anastruc <anastruc@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/07 12:53:29 by anastruc          #+#    #+#              #
-#    Updated: 2024/11/08 12:42:23 by anastruc         ###   ########.fr        #
+#    Updated: 2024/11/08 16:24:37 by anastruc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ NC = \033[0m
 HEADER = headers/test_Account.hpp\
 
 SRCS = Account.cpp \
-		main.cpp \
+		tests.cpp \
 
 PSRCS = $(addprefix srcs/, $(SRCS))
 
