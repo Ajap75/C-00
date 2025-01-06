@@ -6,7 +6,7 @@
 /*   By: anastruc <anastruc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 10:01:33 by anastruc          #+#    #+#             */
-/*   Updated: 2025/01/06 16:17:13 by anastruc         ###   ########.fr       */
+/*   Updated: 2025/01/06 16:37:29 by anastruc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 #include "sstream"
 #include "iostream"
 #include "iomanip"
-
 //Definition des variables statiques declarees dans le .hpp de la classe.
 //Ces statiques sont propres a la classe elle meme et non aux instances. Chaque instance partagera ces meme valeurs.
 //Lors de la definition dans le .cpp, on n'utilise pas static, le compilateur sait deja que ces definitions font references
