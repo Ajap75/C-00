@@ -6,7 +6,7 @@
 /*   By: anastruc <anastruc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 14:19:51 by anastruc          #+#    #+#             */
-/*   Updated: 2024/11/05 12:08:32 by anastruc         ###   ########.fr       */
+/*   Updated: 2025/01/06 14:58:30 by anastruc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ class Megaphone
 
 		i = 0;
 		result = input;
-
+		if (result.size() == 0)
+			std::cout << empty_string;	
 		while (i < result.size())
 		{
 			result[i] = std::toupper((unsigned char)result[i]);
@@ -39,8 +40,13 @@ class Megaphone
 		}
 		return (result);
 	}
+	std::string ToUpper()
+	{
+		std::string result;
+		result = empty_string;
+		return(result);
+	}
 };
-
 
 
 int	main(int argc, char **argv)
@@ -59,5 +65,6 @@ int	main(int argc, char **argv)
 		}
 	}
 	if (argc < 2)
-		std::cout << megaphone.empty_string << std::endl;
+		std::cout << megaphone.ToUpper();
+	std::cout << std::endl;
 }

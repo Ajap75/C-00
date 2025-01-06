@@ -6,12 +6,15 @@
 /*   By: anastruc <anastruc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 12:20:45 by anastruc          #+#    #+#             */
-/*   Updated: 2024/11/07 15:42:45 by anastruc         ###   ########.fr       */
+/*   Updated: 2025/01/06 11:46:57 by anastruc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/Contact.hpp"
 #include <iostream>
+
+Contact::Contact(){}
+Contact::~Contact(){}
 
 void Contact::set_index(const int index)
 {

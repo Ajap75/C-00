@@ -6,7 +6,7 @@
 #    By: anastruc <anastruc@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/07 12:53:29 by anastruc          #+#    #+#              #
-#    Updated: 2024/11/07 16:09:55 by anastruc         ###   ########.fr        #
+#    Updated: 2025/01/06 15:00:55 by anastruc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ HEADER = headers/Contact.hpp\
 			headers/PhoneBook.hpp
 SRCS = Contact.cpp \
 		PhoneBook.cpp \
-		Search_utils.cpp \
+		utils.cpp \
 		main.cpp \
 
 PSRCS = $(addprefix srcs/, $(SRCS))

@@ -6,7 +6,7 @@
 /*   By: anastruc <anastruc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 12:46:05 by anastruc          #+#    #+#             */
-/*   Updated: 2024/11/07 17:40:46 by anastruc         ###   ########.fr       */
+/*   Updated: 2025/01/06 15:13:10 by anastruc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,3 +34,9 @@ int	main(void)
 			return (0);
 	}
 }
+
+
+// Errors handled : 
+// SEARCH in an EMPTY PHONE BOOKE
+// Search with a wrong Index 
+// Empty entry while adding a contact

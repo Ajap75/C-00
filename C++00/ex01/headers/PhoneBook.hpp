@@ -6,7 +6,7 @@
 /*   By: anastruc <anastruc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 18:24:09 by anastruc          #+#    #+#             */
-/*   Updated: 2024/11/07 15:34:56 by anastruc         ###   ########.fr       */
+/*   Updated: 2025/01/06 11:44:46 by anastruc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,8 @@ class PhoneBook
 
   public:
 	//Constructor & destructor
-	PhoneBook() : nbrcontacts(0), index(0)
-	{
-	}
-	~PhoneBook()
-	{
-	}
+	PhoneBook();
+	~PhoneBook();
 	//Member functions
 	void addcontact();
 	void search();

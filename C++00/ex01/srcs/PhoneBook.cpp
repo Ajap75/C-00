@@ -6,12 +6,15 @@
 /*   By: anastruc <anastruc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 18:35:45 by anastruc          #+#    #+#             */
-/*   Updated: 2024/11/07 17:06:09 by anastruc         ###   ########.fr       */
+/*   Updated: 2025/01/06 15:26:01 by anastruc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/PhoneBook.hpp"
 #include "../headers/utils.hpp"
+
+PhoneBook::PhoneBook() : nbrcontacts(0), index(0) {}
+PhoneBook::~PhoneBook() {}
 
 
 void PhoneBook::addcontact()
@@ -61,10 +64,12 @@ void PhoneBook::search()
 			std::cout << "\033[31m" << "Incorrect Index" << "\033[0m" << std::endl;
 			return ;
 		}
-		search_index_int = -1;
 		search_index_int = stringtoint(search_index);
 		if (search_index_int < 0 || search_index_int > (nbrcontacts - 1))
+		{
 			std::cout << "\033[31m" << "Incorrect Index" << "\033[0m" << std::endl;
+			return ;
+		}
 		else
 			print_contact_info(nbrcontacts, contacts, search_index_int);
 		return ;

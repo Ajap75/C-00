@@ -6,7 +6,7 @@
 /*   By: anastruc <anastruc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 10:01:33 by anastruc          #+#    #+#             */
-/*   Updated: 2024/11/08 16:32:54 by anastruc         ###   ########.fr       */
+/*   Updated: 2025/01/06 16:17:13 by anastruc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,21 +51,13 @@ void	Account::displayAccountsInfos( void )
 {
 	Account::_displayTimestamp();
 	std::cout << " accounts:"
-	<< BLUE
 	<< Account::getNbAccounts()
-	<< RESET
 	<< ";total:"
-	<< BLUE
 	<< Account::getTotalAmount()
-	<< RESET
 	<<";deposits:"
-	<< BLUE
 	<< Account::getNbDeposits()
-	<< RESET
 	<< ";withdrawals:"
-	<< BLUE
 	<< Account::getNbWithdrawals()
-	<< RESET
 	<< std::endl;
 }
 
@@ -76,15 +68,15 @@ void	Account::makeDeposit( int deposit )
 	_totalNbDeposits += _nbDeposits;
 	_totalAmount += deposit;
 	_displayTimestamp();
-	std::cout << " index:" << BLUE << this->_amount << RESET
+	std::cout << " index:" << this->_amount 
 	<< ";p_amount:"
-	<< BLUE << this->_amount - deposit << RESET
+	<< this->_amount - deposit 
 	<< ";deposit:"
-	<< BLUE << deposit << RESET
+	<< deposit 
 	<<":amount:"
-	<< BLUE << this-> _amount << RESET
+	<< this-> _amount
 	<<":nb_deposits:"
-	<< BLUE << this->_nbDeposits << RESET
+	<< this->_nbDeposits
 	<< std::endl;
 }
 int		Account::checkAmount( void ) const
@@ -95,9 +87,9 @@ int		Account::checkAmount( void ) const
 bool	Account::makeWithdrawal( int withdrawal )
 {
 	_displayTimestamp();
-	std::cout << " index:" << BLUE << this->_amount << RESET
+	std::cout << " index:" << this->_amount
 		<< ";p_amount:"
-		<< BLUE << this->_amount << RESET
+		<< this->_amount 
 		<< ";withdrawal:";
 
 	if (Account::checkAmount() >= withdrawal)
@@ -107,11 +99,11 @@ bool	Account::makeWithdrawal( int withdrawal )
 		_amount -= withdrawal;
 		_totalAmount -= withdrawal;
 		std::cout
-		<< BLUE << withdrawal << RESET
+		<< withdrawal 
 		<<":amount:"
-		<< BLUE << this-> _amount << RESET
+		<< this-> _amount 
 		<<":nb_withdrawals:"
-		<< BLUE << this->_nbWithdrawals << RESET;
+		<< this->_nbWithdrawals;
 	}
 	else
 	{
@@ -128,21 +120,13 @@ bool	Account::makeWithdrawal( int withdrawal )
 		Account::_displayTimestamp();
 		std::cout
 		<< " index:"
-		<< BLUE
 		<< this->_accountIndex
-		<< RESET
 		<< ";amount:"
-		<< BLUE
 		<< this->_amount
-		<< RESET
 		<< ";deposits:"
-		<< BLUE
 		<< this->_nbDeposits
-		<< RESET
 		<<";withdrawals:"
-		<< BLUE
 		<< this->_nbWithdrawals
-		<< RESET
 		<< std::endl;
 }
 
@@ -191,13 +175,9 @@ void	Account::_displayTimestamp(void)
 		_displayTimestamp();
 		std::cout
 		<< " index:"
-		<< BLUE
 		<< this->_accountIndex
-		<< RESET
 		<< ";amount:"
-		<< BLUE
 		<< this->_amount
-		<< RESET
 		<< ";created"
 		<< std::endl;
 	}
@@ -208,13 +188,9 @@ void	Account::_displayTimestamp(void)
 		_displayTimestamp();
 		std::cout
 		<< " index:"
-		<< BLUE
 		<< this->_accountIndex
-		<< RESET
 		<< ";amount:"
-		<< BLUE
 		<< this->_amount
-		<< RESET
 		<< ";closed"
 		<< std::endl;
 	}

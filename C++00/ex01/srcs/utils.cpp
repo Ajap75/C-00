@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Search_utils.cpp                                   :+:      :+:    :+:   */
+/*   utils.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anastruc <anastruc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 12:05:57 by anastruc          #+#    #+#             */
-/*   Updated: 2024/11/07 17:39:30 by anastruc         ###   ########.fr       */
+/*   Updated: 2025/01/06 15:51:16 by anastruc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,8 @@ int stringtoint(const std::string& str)
 	number = 0;
 	instance >> number;
 	if (instance.fail())
-		std::cout << "\033[31m" << "Incorrect Index" << "\033[0m" << std::endl;
+		return (-1);
 	return (number);
-
 }
 
 std::string truncate(std::string text)
@@ -65,6 +64,7 @@ bool	isNumber(std::string search_index)
 	}
 	return (1);
 }
+
 void	print_contact(Contact &new_contact)
 {
 	int	index;
@@ -98,6 +98,7 @@ void	print_contact_info(int nbrcontacts, Contact *contacts, int search_index)
 			std::cout << contacts[i].get_nick_name() << std::endl;
 			std::cout << contacts[i].get_darkest_secret() << std::endl;
 			std::cout << contacts[i].get_number() << std::endl;
+			return ;
 		}
 		i++;
 	}

@@ -6,7 +6,7 @@
 /*   By: anastruc <anastruc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 18:27:35 by anastruc          #+#    #+#             */
-/*   Updated: 2024/11/07 16:53:05 by anastruc         ###   ########.fr       */
+/*   Updated: 2025/01/06 11:45:58 by anastruc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ class Contact
 
   public:
   //constructor
-	Contact() {}
+	Contact();
   //destructor
-	~Contact() {}
+	~Contact();
 
 
 	void set_index(const int index);
