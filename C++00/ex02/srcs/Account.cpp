@@ -6,7 +6,7 @@
 /*   By: anastruc <anastruc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 10:01:33 by anastruc          #+#    #+#             */
-/*   Updated: 2025/01/06 16:37:29 by anastruc         ###   ########.fr       */
+/*   Updated: 2025/01/06 17:03:36 by anastruc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 // aux variables declare dans la class elle meme comme static. Si on rajoute static ici,
 // le senms sera static pour "file_scop" ce qui change la potee de la variable et la
 // rendra accessible uniquement dans ce fichier .cpp,
+
 
 int Account::_nbAccounts = 0;
 int Account::_totalAmount = 0;
