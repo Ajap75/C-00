@@ -6,7 +6,7 @@
 #    By: anastruc <anastruc@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/07 12:53:29 by anastruc          #+#    #+#              #
-#    Updated: 2024/11/08 16:24:37 by anastruc         ###   ########.fr        #
+#    Updated: 2025/01/08 10:32:53 by anastruc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,7 +44,7 @@ clean :
 
 fclean :
 	@rm -rf $(NAME)
-	@echo  "$(BLUE)\n  My_Awesome_PhoneBook FULLY CLEANED \n$(NC)"
+	@echo  "$(BLUE)\n  Prog FULLY CLEANED \n$(NC)"
 
 leak :
 	@valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --track-fds=yes ./$(NAME)
