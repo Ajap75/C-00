@@ -6,7 +6,7 @@
 #    By: anastruc <anastruc@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/07 12:53:29 by anastruc          #+#    #+#              #
-#    Updated: 2025/01/08 10:32:53 by anastruc         ###   ########.fr        #
+#    Updated: 2025/01/08 14:28:07 by anastruc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ PINK = \033[1;35m
 BLUE = \033[1;36m
 NC = \033[0m
 
-HEADER = headers/test_Account.hpp\
+HEADER = headers/Account.hpp\
 
 SRCS = Account.cpp \
 		tests.cpp \
@@ -42,7 +42,7 @@ clean :
 	@rm -rf objs
 	@echo  "$(BLUE)\n  Prog CLEANED \n$(NC)"
 
-fclean :
+fclean : clean
 	@rm -rf $(NAME)
 	@echo  "$(BLUE)\n  Prog FULLY CLEANED \n$(NC)"
 

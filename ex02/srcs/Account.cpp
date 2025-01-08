@@ -6,11 +6,11 @@
 /*   By: anastruc <anastruc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 10:01:33 by anastruc          #+#    #+#             */
-/*   Updated: 2025/01/06 17:03:36 by anastruc         ###   ########.fr       */
+/*   Updated: 2025/01/08 15:01:01 by anastruc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Account.hpp"
+#include "../headers/Account.hpp"
 #include "ctime"
 #include "sstream"
 #include "iostream"
@@ -60,6 +60,7 @@ void	Account::displayAccountsInfos( void )
 	<< Account::getNbWithdrawals()
 	<< std::endl;
 }
+// index:0;p_amount:42;deposit:5;amount:47;nb_deposits:1
 
 void	Account::makeDeposit( int deposit )
 {
@@ -68,14 +69,14 @@ void	Account::makeDeposit( int deposit )
 	_totalNbDeposits += _nbDeposits;
 	_totalAmount += deposit;
 	_displayTimestamp();
-	std::cout << " index:" << this->_amount 
+	std::cout << " index:" << this->_accountIndex 
 	<< ";p_amount:"
 	<< this->_amount - deposit 
 	<< ";deposit:"
 	<< deposit 
-	<<":amount:"
+	<<";amount:"
 	<< this-> _amount
-	<<":nb_deposits:"
+	<<";nb_deposits:"
 	<< this->_nbDeposits
 	<< std::endl;
 }
@@ -87,7 +88,7 @@ int		Account::checkAmount( void ) const
 bool	Account::makeWithdrawal( int withdrawal )
 {
 	_displayTimestamp();
-	std::cout << " index:" << this->_amount
+	std::cout << " index:" << this->_accountIndex
 		<< ";p_amount:"
 		<< this->_amount 
 		<< ";withdrawal:";
@@ -100,9 +101,9 @@ bool	Account::makeWithdrawal( int withdrawal )
 		_totalAmount -= withdrawal;
 		std::cout
 		<< withdrawal 
-		<<":amount:"
+		<<";amount:"
 		<< this-> _amount 
-		<<":nb_withdrawals:"
+		<<";nb_withdrawals:"
 		<< this->_nbWithdrawals;
 	}
 	else
@@ -191,8 +192,11 @@ void	Account::_displayTimestamp(void)
 		<< this->_accountIndex
 		<< ";amount:"
 		<< this->_amount
-		<< ";closed"
-		<< std::endl;
+		<< ";closed";
+	
+		// Only to avoid the new line at the end of the file
+		if (this->_accountIndex != 7)
+			std::cout << std::endl;
 	}
 
 
