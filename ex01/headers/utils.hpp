@@ -6,7 +6,7 @@
 /*   By: anastruc <anastruc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 16:14:02 by anastruc          #+#    #+#             */
-/*   Updated: 2024/11/07 17:39:16 by anastruc         ###   ########.fr       */
+/*   Updated: 2025/01/08 18:39:34 by anastruc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,6 @@
 #define BLUE "\033[34m"
 #define RESET "\033[39m"
 
-void	ask_user_input(std::string &param, std::string str);
-int		stringtoint(const std::string &str);
-std::string truncate(std::string text);
-bool	isNumber(std::string search_index);
-void	print_contact(Contact &new_contact);
-void	print_contact_info(int nbrcontacts, Contact *contacts,
-			int search_index);
-void	print_phonebook(int nbrcontacts, Contact *contacts);
+
 
 #endif
