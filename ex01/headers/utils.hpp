@@ -6,7 +6,7 @@
 /*   By: anastruc <anastruc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 16:14:02 by anastruc          #+#    #+#             */
-/*   Updated: 2025/01/08 18:39:34 by anastruc         ###   ########.fr       */
+/*   Updated: 2025/01/13 15:13:51 by anastruc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <iomanip>
 #include <sstream>
 #include "Contact.hpp"
+#include <cstdlib>
 
 #define MAGENTA "\033[35m"
 #define RED  "\033[31m"

@@ -6,7 +6,7 @@
 /*   By: anastruc <anastruc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 12:46:05 by anastruc          #+#    #+#             */
-/*   Updated: 2025/01/08 18:59:29 by anastruc         ###   ########.fr       */
+/*   Updated: 2025/01/13 15:05:46 by anastruc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,13 @@ int	main(void)
 	while (1)
 	{
 		std::cout << YELLOW << "\n\nChoose a command : \n\n--------\nADD \n\nSEARCH \n\nEXIT\n---------" << RESET << std::endl;
-		std::getline(std::cin, input);
-		if (input.compare("ADD") == 0)
+		std::getline(std::cin, input);	
+		if (std::cin.eof())
+		{
+			std::cout << RED << "\n\nEOF entered \n\n" << RESET << std::endl;
+			return (0);
+		}
+		else if (input.compare("ADD") == 0)
 			my_phonebook.addcontact();
 		else if (input.compare("SEARCH") == 0)
 			my_phonebook.search();

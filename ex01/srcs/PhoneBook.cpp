@@ -6,7 +6,7 @@
 /*   By: anastruc <anastruc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 18:35:45 by anastruc          #+#    #+#             */
-/*   Updated: 2025/01/13 11:07:31 by anastruc         ###   ########.fr       */
+/*   Updated: 2025/01/13 15:15:23 by anastruc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,11 @@ void PhoneBook::search()
 	while (1)
 	{
 		std::getline(std::cin, search_index);
+	if (std::cin.eof())
+	{
+		std::cout << RED << "\n\nEOF entered \n\n" << RESET << std::endl;
+		exit (0);
+	}
 		search_index_int = stringtoint(search_index);
 		if (search_index.empty() || !isNumber(search_index))
 		{
@@ -96,6 +101,11 @@ void	PhoneBook::ask_user_input(std::string &param, std::string str)
 {
 	while (1)
 	{
+	if (std::cin.eof())
+	{
+		std::cout << RED << "\n\nEOF entered \n\n" << RESET << std::endl;
+		exit (0);
+	}
 	std::cout << MAGENTA <<  "Enter the " << str << RESET << std::endl;
 	std::getline(std::cin, param);
 	if (param.empty())
