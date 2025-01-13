@@ -6,7 +6,7 @@
 /*   By: anastruc <anastruc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 18:35:45 by anastruc          #+#    #+#             */
-/*   Updated: 2025/01/08 19:48:10 by anastruc         ###   ########.fr       */
+/*   Updated: 2025/01/13 11:07:31 by anastruc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ void PhoneBook::search()
 		search_index_int = stringtoint(search_index);
 		if (search_index.empty() || !isNumber(search_index))
 		{
-			std::cout << "\033[31m" << "Incorrect Index : Empty or note a number" << "\033[0m" << std::endl;
+			std::cout << "\033[31m" << "Incorrect Index : Empty or note a valid number" << "\033[0m" << std::endl;
 			return ;
 		}
 		else if (search_index_int < 0 || search_index_int > (nbrcontacts - 1) || search_index_int > 7)
@@ -167,12 +167,12 @@ void	PhoneBook::print_contact_info(int nbrcontacts, Contact *contacts, int searc
 	{
 		if (contacts[i].get_index() == search_index)
 		{
-			std::cout << contacts[i].get_index() << std::endl;
-			std::cout << contacts[i].get_firstname() << std::endl;
-			std::cout << contacts[i].get_last_name() << std::endl;
-			std::cout << contacts[i].get_nick_name() << std::endl;
-			std::cout << contacts[i].get_darkest_secret() << std::endl;
-			std::cout << contacts[i].get_number() << std::endl;
+			std::cout << GREEN << "INDEX = " << contacts[i].get_index() << std::endl;
+			std::cout << "First Name = " << contacts[i].get_firstname() << std::endl;
+			std::cout << "Last Name = " << contacts[i].get_last_name() << std::endl;
+			std::cout << "Nick Name = " << contacts[i].get_nick_name() << std::endl;
+			std::cout << "Darkest Secret = " << contacts[i].get_darkest_secret() << std::endl;
+			std::cout << "Number = " << contacts[i].get_number() << RESET << std::endl;
 			return ;
 		}
 		i++;

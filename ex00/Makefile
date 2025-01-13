@@ -6,13 +6,13 @@
 #    By: anastruc <anastruc@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/07 12:53:29 by anastruc          #+#    #+#              #
-#    Updated: 2025/01/08 10:31:50 by anastruc         ###   ########.fr        #
+#    Updated: 2025/01/13 11:12:25 by anastruc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = megaphone
 COMPIL = c++
-FLAGS = -Wall -Werror -Wextra -std=c++98 -g3 -fPIC
+FLAGS = -Wall -Werror -Wextra -std=c++98
 
 PINK = \033[1;35m
 BLUE = \033[1;36m

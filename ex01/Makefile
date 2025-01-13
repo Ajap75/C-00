@@ -6,13 +6,13 @@
 #    By: anastruc <anastruc@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/07 12:53:29 by anastruc          #+#    #+#              #
-#    Updated: 2025/01/08 10:32:40 by anastruc         ###   ########.fr        #
+#    Updated: 2025/01/13 11:12:16 by anastruc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = My_Awesome_PhoneBook
 COMPIL = c++
-FLAGS = -Wall -Werror -Wextra -std=c++98 -g3 -fPIC
+FLAGS = -Wall -Werror -Wextra -std=c++98
 
 PINK = \033[1;35m
 BLUE = \033[1;36m

@@ -6,7 +6,7 @@
 /*   By: anastruc <anastruc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 10:01:33 by anastruc          #+#    #+#             */
-/*   Updated: 2025/01/08 15:01:01 by anastruc         ###   ########.fr       */
+/*   Updated: 2025/01/13 11:24:16 by anastruc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -192,11 +192,8 @@ void	Account::_displayTimestamp(void)
 		<< this->_accountIndex
 		<< ";amount:"
 		<< this->_amount
-		<< ";closed";
-	
-		// Only to avoid the new line at the end of the file
-		if (this->_accountIndex != 7)
-			std::cout << std::endl;
+		<< ";closed"
+		<< std::endl;
 	}
 
 
